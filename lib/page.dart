@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -21,12 +22,34 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                   child: RefactorCard(
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(FontAwesomeIcons.mars, size: 80.0,),
+                        Text('Male',
+                          style: TextStyle(
+                          fontSize: 18.0,
+                          color: Colors.white,
+                        ),)
+                      ],
+                    ),
                     color: Color(0xFF1D1E33),
                   ),
                 ),
                 //SizedBox(width: 5.0),
                 Expanded(
                   child: RefactorCard(
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(FontAwesomeIcons.venus, size: 80.0,),
+                        Text('Female',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),)
+                      ],
+                    ),
                     color: Color(0xFF1D1E33),
                   ),
                 ),
@@ -69,10 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class RefactorCard extends StatelessWidget {
   final Color color;
-  RefactorCard({@required this.color});
+  final Widget cardChild;
+  RefactorCard({@required this.color, this.cardChild});
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: color,
