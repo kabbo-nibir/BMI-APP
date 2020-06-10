@@ -21,36 +21,47 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               children: [
                 Expanded(
-                  child: RefactorCard(
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(FontAwesomeIcons.mars, size: 80.0,),
-                        Text('Male',
-                          style: TextStyle(
-                          fontSize: 18.0,
-                          color: Colors.white,
-                        ),)
-                      ],
+                  child: GestureDetector(
+                    onTap: (){
+                      print('pressed');
+                    },
+                    child: RefactorCard(
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(FontAwesomeIcons.mars, size: 80.0,),
+                          //SizedBox(height: 15.0),
+                          Text('Male',
+                            style: TextStyle(
+                            fontSize: 18.0,
+                            color: Colors.white,
+                          ),)
+                        ],
+                      ),
+                      color: Color(0xFF1D1E33),
                     ),
-                    color: Color(0xFF1D1E33),
                   ),
                 ),
                 //SizedBox(width: 5.0),
                 Expanded(
-                  child: RefactorCard(
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(FontAwesomeIcons.venus, size: 80.0,),
-                        Text('Female',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white,
-                          ),)
-                      ],
+                  child: GestureDetector(
+                    onTap: (){
+                      print("pressed");
+                    },
+                    child: RefactorCard(
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(FontAwesomeIcons.venus, size: 80.0,),
+                          Text('Female',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              color: Colors.white,
+                            ),)
+                        ],
+                      ),
+                      color: Color(0xFF1D1E33),
                     ),
-                    color: Color(0xFF1D1E33),
                   ),
                 ),
               ],
