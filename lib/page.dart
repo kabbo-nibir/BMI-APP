@@ -108,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                     SliderTheme(data: SliderTheme.of(context).copyWith(
+                      thumbColor: Colors.pink,
                       thumbShape: RoundSliderThumbShape(enabledThumbRadius:15.0 ),
                       overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
                     ), child: Slider(value: height.toDouble(),
