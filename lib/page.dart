@@ -108,13 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                     SliderTheme(data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.white,
                       thumbColor: Colors.pink,
+                      overlayColor: Color(0x29EB1555),
                       thumbShape: RoundSliderThumbShape(enabledThumbRadius:15.0 ),
                       overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
                     ), child: Slider(value: height.toDouble(),
                       min: 120,
                       max: 220,
-                      activeColor: Colors.white,
+                      //activeColor: Colors.white,
                       inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue){
                         setState(() {
