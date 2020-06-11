@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,6 +8,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  int height = 180;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,20 +26,25 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: (){
-                      print('pressed');
+                    onTap: () {
+                      print('Left pressed');
                     },
                     child: RefactorCard(
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(FontAwesomeIcons.mars, size: 80.0,),
+                          Icon(
+                            FontAwesomeIcons.mars,
+                            size: 80.0,
+                          ),
                           //SizedBox(height: 15.0),
-                          Text('Male',
+                          Text(
+                            'Male',
                             style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white,
-                          ),)
+                              fontSize: 18.0,
+                              color: Color(0xFF8D8E98),
+                            ),
+                          )
                         ],
                       ),
                       color: Color(0xFF1D1E33),
@@ -45,19 +54,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 //SizedBox(width: 5.0),
                 Expanded(
                   child: GestureDetector(
-                    onTap: (){
-                      print("pressed");
+                    onTap: () {
+                      print("Right pressed");
                     },
                     child: RefactorCard(
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(FontAwesomeIcons.venus, size: 80.0,),
-                          Text('Female',
+                          Icon(
+                            FontAwesomeIcons.venus,
+                            size: 80.0,
+                          ),
+                          Text(
+                            'Female',
                             style: TextStyle(
                               fontSize: 18.0,
-                              color: Colors.white,
-                            ),)
+                              color: Color(0xFF8D8E98),
+                            ),
+                          ),
                         ],
                       ),
                       color: Color(0xFF1D1E33),
@@ -71,6 +85,43 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: RefactorCard(
               color: Color(0xFF1D1E33),
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('height',style: TextStyle(
+                      fontSize: 18.0,
+                      color: Color(0xFF8D8E98),
+                    ),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(height.toString(),style: TextStyle(
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.w900,
+                        ),),
+                        Text('cm',style: TextStyle(
+                          fontSize: 18.0,
+                          color: Color(0xFF8D8E98),
+                        ),),
+                      ],
+                    ),
+                    SliderTheme(data: SliderTheme.of(context).copyWith(
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius:15.0 ),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
+                    ), child: Slider(value: height.toDouble(),
+                      min: 120,
+                      max: 220,
+                      activeColor: Colors.white,
+                      inactiveColor: Color(0xFF8D8E98),
+                      onChanged: (double newValue){
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },),),
+                  ],
+                ),
             ),
           ),
           SizedBox(height: 10),
