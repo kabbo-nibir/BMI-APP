@@ -8,9 +8,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int height = 180;
-
+  int weight = 60;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,46 +84,62 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             child: RefactorCard(
               color: Color(0xFF1D1E33),
-                cardChild: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('height',style: TextStyle(
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'height',
+                    style: TextStyle(
                       fontSize: 18.0,
                       color: Color(0xFF8D8E98),
-                    ),),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: [
-                        Text(height.toString(),style: TextStyle(
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        height.toString(),
+                        style: TextStyle(
                           fontSize: 50.0,
                           fontWeight: FontWeight.w900,
-                        ),),
-                        Text('cm',style: TextStyle(
+                        ),
+                      ),
+                      Text(
+                        'cm',
+                        style: TextStyle(
                           fontSize: 18.0,
                           color: Color(0xFF8D8E98),
-                        ),),
-                      ],
-                    ),
-                    SliderTheme(data: SliderTheme.of(context).copyWith(
+                        ),
+                      ),
+                    ],
+                  ),
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
                       thumbColor: Colors.pink,
                       overlayColor: Color(0x29EB1555),
-                      thumbShape: RoundSliderThumbShape(enabledThumbRadius:15.0 ),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0),
-                    ), child: Slider(value: height.toDouble(),
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                      overlayShape:
+                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                    ),
+                    child: Slider(
+                      value: height.toDouble(),
                       min: 120,
                       max: 220,
                       //activeColor: Colors.white,
                       inactiveColor: Color(0xFF8D8E98),
-                      onChanged: (double newValue){
+                      onChanged: (double newValue) {
                         setState(() {
                           height = newValue.round();
                         });
-                      },),),
-                  ],
-                ),
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(height: 10),
@@ -133,6 +148,37 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Expanded(
                   child: RefactorCard(
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Color(0xFF8D8E98),
+                          ),
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: TextStyle(
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(icon: FontAwesomeIcons.plus,onPressed: (){
+                              setState(() {
+                                weight++;
+                              });
+                            },),
+                            SizedBox(width: 10.0),
+                            RoundIconButton(icon: FontAwesomeIcons.minus),
+                          ],
+                        ),
+                      ],
+                    ),
                     color: Color(0xFF1D1E33),
                   ),
                 ),
@@ -170,6 +216,27 @@ class RefactorCard extends StatelessWidget {
           color: Colors.white,
         ),*/
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+
+  RoundIconButton({@required this.icon,@required this.onPressed });
+  final IconData icon;
+  final Function onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon),
+      onPressed: onPressed,
+      elevation: 0.0,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
