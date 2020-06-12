@@ -242,24 +242,35 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder:(context) => ResultsPage()));
-            },
-            child: Container(
-              child: Center(
-                child: Text('CALCULATE',style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 25.0,
-                ),),
-              ),
-              color: Colors.pink,
-              width: double.infinity,
-              height: 90,
-              padding: EdgeInsets.only(bottom: 20.0),
-            ),
-          ),
+          RecalCulate(buttonTitle: 'Calculate',
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder:(context) => ResultsPage()));
+          },),
         ],
+      ),
+    );
+  }
+}
+
+class RecalCulate extends StatelessWidget {
+  RecalCulate({@required this.onTap, @required this.buttonTitle});
+  final Function onTap;
+  final String buttonTitle;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: Center(
+          child: Text(buttonTitle,style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 25.0,
+          ),),
+        ),
+        color: Colors.pink,
+        width: double.infinity,
+        height: 90,
+        padding: EdgeInsets.only(bottom: 20.0),
       ),
     );
   }
