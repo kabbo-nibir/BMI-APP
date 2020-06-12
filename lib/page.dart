@@ -256,6 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.pink,
               width: double.infinity,
               height: 90,
+              padding: EdgeInsets.only(bottom: 20.0),
             ),
           ),
         ],
