@@ -10,6 +10,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int height = 180;
   int weight = 60;
+  int age = 10;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,7 +175,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               });
                             },),
                             SizedBox(width: 10.0),
-                            RoundIconButton(icon: FontAwesomeIcons.minus),
+                            RoundIconButton(icon: FontAwesomeIcons.minus,
+                              onPressed: (){
+                              setState(() {
+                                weight--;
+                              });
+                              },
+                            ),
                           ],
                         ),
                       ],
@@ -184,6 +191,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: RefactorCard(
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Text('Age',style: TextStyle(
+                        fontSize: 18.0,
+                        color: Color(0xFF8D8E98),
+                      ),),
+                        Text(age.toString(),style: TextStyle(
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.w900,
+                        ),),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(icon: FontAwesomeIcons.plus, onPressed: (){
+                              setState(() {
+                                age++;
+                              });
+                            },),
+                            SizedBox(width: 10.0),
+                            RoundIconButton(icon: FontAwesomeIcons.minus, onPressed: (){
+                              setState(() {
+                                age--;
+                              });
+                            })
+                          ],
+                        ),
+                    ],),
                     color: Color(0xFF1D1E33),
                   ),
                 ),
