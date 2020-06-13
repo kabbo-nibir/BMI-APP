@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:projectothe/page.dart';
 
 class ResultsPage extends StatelessWidget {
+
+  ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,16 +33,16 @@ class ResultsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Normal',style: TextStyle(
+                Text(resultText.toUpperCase(),style: TextStyle(
                   color: Color(0xFF24D876),
                   fontWeight: FontWeight.bold,
                   fontSize: 22.0,
                 ),),
-                Text('18.3',style: TextStyle(
+                Text(bmiResult,style: TextStyle(
                   fontSize: 100.0,
                   fontWeight: FontWeight.bold,
                 ),),
-                Text('Your BMI is low you should eat more',style: TextStyle(
+                Text(interpretation,style: TextStyle(
                   fontSize: 22.0,
                 ),),
               ],

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'result_page.dart';
+import 'calculate_math.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -242,10 +243,23 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          RecalCulate(buttonTitle: 'Calculate',
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder:(context) => ResultsPage()));
-          },),
+          RecalCulate(
+            buttonTitle: 'Calculate',
+            onTap: () {
+              CalculateMath calc =
+                  CalculateMath(height: height, weight: weight);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(
+                    bmiResult: calc.CalculatBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
@@ -262,10 +276,13 @@ class RecalCulate extends StatelessWidget {
       onTap: onTap,
       child: Container(
         child: Center(
-          child: Text(buttonTitle,style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 25.0,
-          ),),
+          child: Text(
+            buttonTitle,
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 25.0,
+            ),
+          ),
         ),
         color: Colors.pink,
         width: double.infinity,
