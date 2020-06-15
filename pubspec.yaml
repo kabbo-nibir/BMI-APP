@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.8.1
+  easy_localization: ^2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +45,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets :
+    - lang/translations/en-US.json
+    - lang/translations/bn-BD.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

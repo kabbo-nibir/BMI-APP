@@ -1,0 +1,18 @@
+{
+  "BMI APP": "বিএমআই অ্যাপ",
+  "Male": "পুরুষ",
+  "Female": "মহিলা",
+  "height": "উচ্চতা",
+  "cm": "সেন্টিমিটার",
+  "WEIGHT": "ওজন",
+  "Age": "বয়স",
+  "Calculate": "ক্যালকুলেট",
+  "Re-Calculate": "পুনরায়-ক্যালকুলেট",
+  "Your Result": "আপনার ফলাফল",
+  "overweight": "অতিরিক্ত ওজন",
+  "normal": "স্বাভাবিক",
+  "underweight":"ওজন কম",
+  "You have a higher than normal body weight": "আপনার ওজন স্বাভাবিকের চেয়ে বেশি",
+  "You have a normal body weight": "আপনার ওজন স্বাভাবিক",
+  "You have a lower than normal body weight": "আপনার ওজন স্বাভাবিকের চেয়ে কম"
+}

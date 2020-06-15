@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projectothe/page.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ResultsPage extends StatelessWidget {
 
@@ -50,7 +51,7 @@ class ResultsPage extends StatelessWidget {
           ),
           RecalCulate(onTap: (){
           Navigator.pop(context);
-          }, buttonTitle: 'Re-Calculate')
+          }, buttonTitle: 'Re-Calculate'.tr())
         ],
       ),
     );

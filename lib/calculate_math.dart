@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:easy_localization/easy_localization.dart';
 class CalculateMath {
   CalculateMath ({this.weight, this.height});
   final weight;
@@ -13,22 +14,22 @@ class CalculateMath {
 
   String getResult(){
     if (_bmi >= 25) {
-      return 'overweight';
+      return 'overweight'.tr();
     }else if (_bmi > 18.5){
-      return 'normal';
+      return 'normal'.tr();
     }
     else{
-      return 'underweight';
+      return 'underweight'.tr();
     }
   }
 
   String getInterpretation() {
     if (_bmi >= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
+      return 'You have a higher than normal body weight'.tr();
     } else if (_bmi >= 18.5) {
-      return 'You have a normal body weight. Good job!';
+      return 'You have a normal body weight'.tr();
     } else {
-      return 'You have a lower than normal body weight. You can eat a bit more.';
+      return 'You have a lower than normal body weight'.tr();
     }
   }
 

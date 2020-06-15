@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'result_page.dart';
 import 'calculate_math.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('App Title'),
+          child: Text('BMI APP'.tr()),
         ),
       ),
       body: Column(
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           //SizedBox(height: 15.0),
                           Text(
-                            'Male',
+                            'Male'.tr(),
                             style: TextStyle(
                               fontSize: 18.0,
                               color: Color(0xFF8D8E98),
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             size: 80.0,
                           ),
                           Text(
-                            'Female',
+                            'Female'.tr(),
                             style: TextStyle(
                               fontSize: 18.0,
                               color: Color(0xFF8D8E98),
@@ -91,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'height',
+                    'height'.tr(),
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Color(0xFF8D8E98),
@@ -110,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Text(
-                        'cm',
+                        'cm'.tr(),
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Color(0xFF8D8E98),
@@ -155,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'WEIGHT',
+                          'WEIGHT'.tr(),
                           style: TextStyle(
                             fontSize: 18.0,
                             color: Color(0xFF8D8E98),
@@ -201,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Age',
+                          'Age'.tr(),
                           style: TextStyle(
                             fontSize: 18.0,
                             color: Color(0xFF8D8E98),
@@ -244,7 +245,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           RecalCulate(
-            buttonTitle: 'Calculate',
+            buttonTitle: 'Calculate'.tr(),
             onTap: () {
               CalculateMath calc =
                   CalculateMath(height: height, weight: weight);

@@ -1,0 +1,18 @@
+{
+  "BMI APP": "BMI APP",
+  "Male": "Male",
+  "Female": "Female",
+  "height": "height",
+  "cm": "cm",
+  "WEIGHT": "WEIGHT",
+  "Age": "Age",
+  "Calculate": "Calculate",
+  "Re-Calculate": "Re-Calculate",
+  "Your Result": "Your Result",
+  "overweight": "overweight",
+  "normal": "normal",
+  "underweight":"underweight",
+  "You have a higher than normal body weight": "You have a higher than normal body weight",
+  "You have a normal body weight": "You have a normal body weight",
+  "You have a lower than normal body weight": "You have a lower than normal body weight"
+}
